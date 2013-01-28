@@ -1,6 +1,22 @@
 Vim
 ---
 
+#### Navigating
+
+If in a large codebase, I like to search by tag (see `:help tag`). To do this, a tags
+file must exist in the current directory (usually the root of the project). For instance,
+in the root of the Rails code reposity, I run:
+
+     ctags -R .
+
+which creates a `tags` file for Vim to use. In vim:
+
+    :ta has_many        --> Search for a has_many definition, and jump to the first result
+    :ts has_many        --> List the results for has_many definitions
+    CTRL-]              --> Jump to the definition of the tag under the cursor
+    CTRL-T              --> Jump back in the tag stack (see below)
+    :tags               --> List the tags in the "tag stack" (which is a stack of all tags jumped to)
+
 #### Shell
 
 Map keys to a shell command. I use these _a lot_. It's worth using them manually
