@@ -1,5 +1,7 @@
 I'm often moving data between development and staging (or production!) on Drupal sites.
 
+### The database
+
 I keep gzipped backup files on the remote server. In the Drupal project root directory,
 I run:
 
@@ -13,3 +15,9 @@ bash redirection is often handy.
 Without gzipped backups, I could also run:
 
     ssh remote "cd /drupal/site && drush sql-dump | gzip" | gunzip | $(drush sql-connect)
+
+### Files
+
+To move files (such as uploade images) from remote to my local machine, I run:
+
+    rsync -avz remote:/path/to/drupal/sites/default/files sites/default
