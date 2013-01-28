@@ -5,7 +5,7 @@ Vim
 
 If in a large codebase, I like to search by tag (see `:help tag`). To do this, a tags
 file must exist in the current directory (usually the root of the project). For instance,
-in the root of the Rails code reposity, I run:
+in the root of the Rails code repository, I run:
 
      ctags -R .
 
