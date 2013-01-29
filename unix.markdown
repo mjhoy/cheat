@@ -12,7 +12,7 @@ Common, helpful unix commands.
 
 Quick and dirty LOC measurement:
 
-    find . -iname '*.hs' | xargs cat | wc -l    --> Number of lines of haskell codes (including whitespace, comments)
+    find . -iname '*.hs' | xargs cat | wc -l    --> Number of lines of Haskell code (including whitespace, comments)
 
 ([Why not xargs wc -l][hn]?)
 
