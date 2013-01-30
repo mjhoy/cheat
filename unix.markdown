@@ -27,3 +27,11 @@ be improved:
 
     find ~/rails -name 'Gemfile' -exec grep -E 'rails., .3.0' {} \; -print
           -----> List gemfiles under ~/rails containing the string "rails', '3.0"
+
+#### ssh
+
+Setting up a proxy server:
+
+    ssh -ND 8887 -p 22 <remote>     --> Start a SOCKS server on local port 8887 that tunnels
+                                        to <remote> through port 22. To proxy all web traffic,
+                                        set up the proxy settings in System Prefs/Network/Proxies.
