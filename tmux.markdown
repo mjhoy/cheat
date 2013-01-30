@@ -19,3 +19,13 @@ look up methods and documentation.
     <C-B> N/P             --> Open next/previous window
     <C-B> L               --> Open last window
     <C-B> , <name>        --> Name the current window (e.g., "Server")
+
+#### send-keys
+
+    $ tmux send-keys -t 1 'ruby -Itest test/models/user_test.rb' C-m     --> Run the command on window 1
+
+With Vim:
+
+    :map ,t :w\|!tmux send-keys -t 1 'ruby -Itest %' C-m <cr>
+
+(The `C-m` is to run the command on the target shell; the `<cr>` is to run the Vim command.)
