@@ -3,6 +3,16 @@ Unix
 
 Common, helpful unix commands.
 
+#### bash substitution
+
+Silly example: list files in the current directory, replacing "." with " - DOT - ":
+
+    for i in *; do echo ${i//./ - DOT - }; done     --> Gemfile - DOT - lock, etc.
+    
+Rename all files in the current directory to lowercase, substituting underscores for spaces:
+    
+    for i in *; do y=$(echo $i | tr '[A-Z]' '[a-z]'); mv "$i" ${y//\ /_}; done
+
 #### find
 
     find .                --> list all files under the current directory
