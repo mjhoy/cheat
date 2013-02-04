@@ -45,3 +45,13 @@ Setting up a proxy server:
     ssh -ND 8887 -p 22 <remote>     --> Start a SOCKS server on local port 8887 that tunnels
                                         to <remote> through port 22. To proxy all web traffic,
                                         set up the proxy settings in System Prefs/Network/Proxies.
+
+#### curl
+
+Downloading a file from a website (basecamp) which requires an authorization
+cookie (taken from a browser session):
+
+    curl -H "Cookie: <...>" https://someone.basecamphq.com/file.mp3 > file.mp3
+
+To get the header cookie info, use Chrome's Network tab in the inspector, and just
+copy "Cookie: ..." from the headers.
