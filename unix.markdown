@@ -26,6 +26,15 @@ Quick and dirty LOC measurement:
 
 ([Why not xargs wc -l][hn]?)
 
+#### xargs
+
+The above `find` command is suboptimal. It pipes a list of filenames to `xargs`, and if those filenames
+have any spaces in their names (or  other non-standard filename characters). To avoid this, you can
+instruct `find` to separate filenames with the NUL (`\0`) character and `xargs` to interpert that
+correctly:
+
+    find . -iname '*.hs' -print0 | xargs -0 cat | wc -l
+
 [hn]:http://news.ycombinator.com/item?id=4317007
 
 #### find + grep
