@@ -28,7 +28,9 @@ Quick and dirty LOC measurement:
 
 [hn]:http://news.ycombinator.com/item?id=4317007
 
-Parallelizing find -exec, using `parallel`:
+#### find + parallel
+
+Effectively you can parallelize find -exec, using `parallel`.
 
 Non-parallel:
 
