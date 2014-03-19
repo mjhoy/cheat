@@ -28,6 +28,16 @@ Quick and dirty LOC measurement:
 
 [hn]:http://news.ycombinator.com/item?id=4317007
 
+Parallelizing find -exec, using `parallel`:
+
+Non-parallel:
+
+    find . -name '*.jpg' -exec convert -resize 1440 -quality 60 "{}" "converted/{}" \;
+
+Parallel, with progress bar:
+
+    find . -name '*.jpg' -print0 | parallel -0 -r --bar convert -resize 1440 -quality 60 "{}" "converted/{}" \;
+
 #### xargs
 
 The above `find` command is suboptimal. It pipes a list of filenames to `xargs`, and if those filenames
