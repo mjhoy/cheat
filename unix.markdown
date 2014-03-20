@@ -7,7 +7,9 @@ Common, helpful unix commands.
 
 Silly example: list files in the current directory, replacing "." with " - DOT - ":
 
-    for i in *; do echo ${i//./ - DOT - }; done     --> Gemfile - DOT - lock, etc.
+```bash
+for i in *; do echo ${i//./ - DOT - }; done     --> Gemfile - DOT - lock, etc.
+```
     
 Rename all files in the current directory to lowercase, substituting underscores for spaces:
     
